@@ -4,13 +4,8 @@ arch:
   - ppc64le
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y build-essential git ninja-build ccache libopenblas-dev libopencv-dev cmake gfortran
-addons:
-  apt:
-    packages:
-      - python
+  - sudo apt-get install -y build-essential git ninja-build ccache libopenblas-dev libopencv-dev cmake gfortran python
 env:
   - USE_CPP_PACKAGE=1
 install:
-  - python3 -m pip install --user -e ./python
- 
+  - pip install --user -e ./python
