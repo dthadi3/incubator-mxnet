@@ -4,8 +4,10 @@ arch:
   - ppc64le
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y build-essential git ninja-build ccache libopenblas-dev libopencv-dev cmake gfortran python
+  - sudo apt-get install -y build-essential git ninja-build ccache libopenblas-dev libopencv-dev cmake gfortran python3
 env:
   - USE_CPP_PACKAGE=1
 install:
-  - pip install --user -e ./python
+  - cmake
+  - python3 -m pip install --user -e ./python
+  - python3 -m pip install --user graphviz==0.8.4 jupyter
